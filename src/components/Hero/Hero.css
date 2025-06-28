@@ -1,0 +1,315 @@
+.hero{
+  display: flex;
+  flex-direction: column; /* Keep column for overall hero layout */
+  align-items: center;
+  min-height: 100vh;
+  padding: 150px 10px 20px 10px;
+  overflow: hidden;
+  margin: 10px 7px;
+  border-radius: 20px;
+  border: 5px solid #112A46;
+  background: rgba(216, 151, 60, 0.2);
+}
+
+.hero-top-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row; /* Keep the image and content side by side */
+  text-align: center;
+  width: 100%;
+  max-width: 80%; /* Adjust as needed */
+  gap: 40px;
+}
+
+.hero-left-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Space between image and action buttons */
+}
+
+.hero-img{
+  width: 280px;
+  height: auto;
+  border-radius: 50%;
+  animation: dropFromTop 1.5s ease-out forwards;
+  transform: translateY(-100vh);
+  border:#016e66 solid 5px;
+  margin-top: -15px;
+}
+
+p{
+  font-size: large;
+  font-weight: 800;
+  margin: 10px 10px;
+}
+
+.span{
+  margin:15px 15px;
+  padding: 15px;
+  gap: 10px;
+}
+
+.hero-content p span::before {
+  content: '\2022'; /* Unicode for a bullet point */
+  margin-right: 8px; /* Space between bullet and text */
+  color: #DA7C25; /* Example color for the bullet */
+}
+
+.hero-content {
+  flex: 1;
+  width: 99%;
+  text-align: left; /* Align content to the left */
+  padding: 25px 0; /* Adjust padding as needed */
+  /* Removed: animation: dropFromTop 1.5s ease-out forwards; */
+}
+
+.hero-content h1{
+  margin-bottom: 10px;
+  text-align: center;
+  overflow: hidden; /* Ensures text is hidden before animation */
+  white-space: nowrap; /* Keeps text on a single line */
+  border-right: .15em solid orange; /* Blinking cursor effect */
+  animation:
+    typing 3.5s steps(75, end) 2s forwards, /* Adjusted steps for h1 */
+    blink-caret .75s step-end infinite 2s;
+}
+
+.hero-content span{
+  background: #f74a11;
+  background-image: linear-gradient(to right top, #2ec4b6, #21a39a, #17827e, #0f6362, #0a4646);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-right: 10px; /* Add margin to the right of each span */
+}
+
+.hero-action{
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 15px; /* Space between buttons */
+  font-weight: 600;
+}
+
+
+.hero-connect{
+  color: antiquewhite;
+  background: #f74a11;
+  background-image: linear-gradient(to right top, #2ec4b6, #21a39a, #17827e, #0f6362, #0a4646);
+  border-radius: 20px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-connect:hover{
+  transition: 0.3s ease-in-out;
+  scale: 1.05;
+}
+
+.hero-resume{
+  color: antiquewhite;
+  background: #bdcf4c;
+  background-image: linear-gradient(to right top, #2ec4b6, #21a39a, #17827e, #0f6362, #0a4646);
+  border-radius: 20px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-resume:hover{
+  transition: 0.3s ease-in-out;
+  scale: 1.05;
+}
+
+/* Keyframe animation for the drop effect */
+@keyframes dropFromTop {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  
+  70% {
+    transform: translateY(20px); /* Slight bounce past final position */
+    opacity: 1;
+  }
+  
+  85% {
+    transform: translateY(-10px); /* Small bounce back */
+  }
+  
+  100% {
+    transform: translateY(0); /* Final position */
+    opacity: 1;
+  }
+}
+
+/* Keyframe animation for fading in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Write-on animation for text */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Blinking cursor animation */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+
+.hero-content .hero-description {
+  opacity: 0; /* Start hidden */
+  margin-bottom: 10px; /* Add margin for spacing between paragraphs */
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.hero-content .hero-description:nth-of-type(1) {
+  animation-delay: 5.5s; /* After h1 animation finishes (2s delay + 3.5s duration) */
+}
+
+.hero-content .hero-description:nth-of-type(2) {
+  animation-delay: calc(5.5s + 1s); /* After first paragraph animation finishes (5.5s delay + 1s duration) */
+}
+
+.hero-img:hover {
+  animation: none;
+  transition: transform 0.5s ease;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .hero-top-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .hero-left-column {
+    width: 100%;
+    align-items: center;
+  }
+
+  .hero-img {
+    margin-bottom: 0;
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .hero-content {
+    text-align: center;
+    padding: 0;
+  }
+
+  .hero-action {
+    flex-direction: row; /* Keep buttons side-by-side on small screens */
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/********************************/
+/*        Skills Section        */
+/********************************/
+.hero-skills {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px; /* Adjust as needed for spacing */
+  position: relative;
+  padding: 20px;
+}
+
+.skills-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #333; /* Adjust color as needed */
+}
+
+.skills-container {
+  width: 100%;
+  max-width: 900px; /* Adjusted for smaller cards */
+  height: 250px; /* Adjusted for smaller cards */
+  position: relative;
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+
+.skill-card {
+  position: absolute;
+  width: 180px; /* Smaller card size */
+  height: 120px; /* Smaller card size */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(to right top, #2ec4b6, #21a39a, #17827e, #0f6362, #0a4646); /* Example background */
+  text-align: center;
+  padding: 10px;
+}
+
+/* 3D Positional Classes for Skill Cards */
+.skill-card.center {
+  transform: translateX(0) translateZ(0) rotateY(0) scale(1.1);
+  opacity: 1;
+  z-index: 5;
+  box-shadow: 0 15px 30px -8px rgba(0, 0, 0, 0.25);
+}
+
+.skill-card.left-1 {
+  transform: translateX(-150px) translateZ(-100px) rotateY(15deg) scale(0.9);
+  opacity: 0.9;
+  z-index: 4;
+}
+
+.skill-card.right-1 {
+  transform: translateX(150px) translateZ(-100px) rotateY(-15deg) scale(0.9);
+  opacity: 0.9;
+  z-index: 4;
+}
+
+.skill-card.left-2 {
+  transform: translateX(-300px) translateZ(-200px) rotateY(30deg) scale(0.8);
+  opacity: 0.6;
+  z-index: 3;
+}
+
+.skill-card.right-2 {
+  transform: translateX(300px) translateZ(-200px) rotateY(-30deg) scale(0.8);
+  opacity: 0.6;
+  z-index: 3;
+}
+
+.skill-card.hidden {
+  transform: scale(0.5);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Responsive design for smaller screens for skills */
+@media (max-width: 768px) {
+  .skills-title { font-size: 2.5rem; }
+  .skill-card { width: 140px; height: 100px; font-size: 1rem; }
+  .skill-card.left-1 { transform: translateX(-100px) translateZ(-70px) rotateY(15deg) scale(0.9); }
+  .skill-card.right-1 { transform: translateX(100px) translateZ(-70px) rotateY(-15deg) scale(0.9); }
+  .skill-card.left-2, .skill-card.right-2 { display: none; } /* Hide far cards on small screens */
+}

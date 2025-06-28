@@ -1,0 +1,132 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap');
+
+
+.resume-container {
+    margin: 10px 10px;
+    border-radius: 20px;
+    width: 99%;
+    min-height: 100vh;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    /* min-height: 200vh;  */
+    font-family: 'Cormorant Garamond', serif;
+    perspective: 1000px; 
+    overflow-x: hidden; 
+    border-radius: 10px;
+    border: 5px solid #112A46;
+      background: rgba(216, 151, 60, 0.2);
+}
+
+.resume-header {
+    align-items: center;
+    justify-content:center;
+    border-bottom: 2px solid #8b795e;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+
+.name{
+    justify-content: center;
+    align-items: center;
+}
+
+.resume-header h1{
+    text-align: center;
+    padding: 10px 30px;
+    border-bottom: 2px solid #8b795e;
+    font-size: 80px;
+    font-weight: 600;
+    background-image: linear-gradient(to right top, #034c36, #004b3b, #004940, #024844, #0a4646);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.resume-header  h2{
+    font-size: 38px;
+    font-weight: 700;
+    margin: 10px;
+    -webkit-text-fill-color: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06%);
+    background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 3px;
+}
+
+.resume-header p {
+    font-size: 16px;
+    margin-top: 8px;
+    color: #273e47;
+    font-weight: 800;
+}
+
+
+.resume-section {
+    margin-bottom: 25px;
+}
+
+.resume-section h2 {
+    font-size: 26px;
+    font-weight: 600;
+    /* color: #4a3f2a; */
+    border-bottom: 1px solid #c8bca7;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+
+.job, .education-entry {
+    margin-bottom: 20px;
+}
+
+.job h3, .education-entry h3 {
+
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    color: #273e47;
+}
+
+.job-dates, .education-dates {
+    font-size: 14px;
+    font-style: italic;
+    color: #8b795e;
+    margin-bottom: 8px;
+}
+
+.resume-section ul {
+    padding-left: 20px;
+    list-style-type: none; 
+}
+
+.resume-section ul li {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+
+.resume-section ul li::before {
+    content: '•';
+    font-size: 18px;
+    color: #8b795e;
+    position: absolute;
+    left: 0;
+    top: 0px;
+}
+
+
+.skills-list {
+    padding-left: 0;
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
