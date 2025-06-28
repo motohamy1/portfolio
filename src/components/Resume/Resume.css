@@ -130,3 +130,106 @@
     -webkit-columns: 2;
     -moz-columns: 2;
 }
+
+@media (max-width: 1024px) {
+  .resume-container {
+    padding: 40px;
+  }
+  .resume-header h1 {
+    font-size: 60px;
+  }
+  .resume-header h2 {
+    font-size: 30px;
+  }
+  .resume-header p {
+    font-size: 15px;
+  }
+  .resume-section h2 {
+    font-size: 22px;
+  }
+  .job h3, .education-entry h3 {
+    font-size: 18px;
+  }
+  .job-dates, .education-dates {
+    font-size: 13px;
+  }
+  .resume-section ul li {
+    font-size: 15px;
+  }
+  .resume-section ul li::before {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .resume-container {
+    padding: 30px;
+    margin: 5px 5px;
+  }
+  .resume-header h1 {
+    font-size: 45px;
+    padding: 8px 20px;
+  }
+  .resume-header h2 {
+    font-size: 24px;
+  }
+  .resume-header p {
+    font-size: 14px;
+  }
+  .resume-section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .job h3, .education-entry h3 {
+    font-size: 16px;
+  }
+  .job-dates, .education-dates {
+    font-size: 12px;
+  }
+  .resume-section ul li {
+    font-size: 14px;
+    line-height: 1.6;
+    padding-left: 15px;
+  }
+  .resume-section ul li::before {
+    font-size: 15px;
+    left: -5px;
+  }
+  .skills-list {
+    columns: 1;
+    -webkit-columns: 1;
+    -moz-columns: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-container {
+    padding: 20px;
+    margin: 5px 2px;
+  }
+  .resume-header h1 {
+    font-size: 35px;
+    padding: 5px 15px;
+  }
+  .resume-header h2 {
+    font-size: 20px;
+  }
+  .resume-header p {
+    font-size: 13px;
+  }
+  .resume-section h2 {
+    font-size: 18px;
+  }
+  .job h3, .education-entry h3 {
+    font-size: 15px;
+  }
+  .job-dates, .education-dates {
+    font-size: 11px;
+  }
+  .resume-section ul li {
+    font-size: 13px;
+  }
+  .resume-section ul li::before {
+    font-size: 14px;
+  }
+}
