@@ -3,26 +3,28 @@ import './Contact.css'
 
 const Contact = () => {
   return (
-    <div className="contact-container">
+    <div id="contact" className="contact-container">
       <div className="contact-left">
         <h2 className="contact-title">
           <span className="gradient-text">Let's talk</span>
         </h2>
         <p className="contact-desc">
-          I'm currently available to take on new projects, so feel free to send me a message about anything that you want me to work on. You can contact anytime.
+          I'm currently available to take on new projects, 
+          so feel free to send me a message about anything that you want me to work on. 
+          You can contact anytime.
         </p>
         <div className="contact-info">
           <div className="contact-info-item">
             <span className="contact-icon">✉️</span>
-            <span>greatstackdev@gmail.com</span>
+            <span>meltohamy080@gmail.com</span>
           </div>
           <div className="contact-info-item">
             <span className="contact-icon">📞</span>
-            <span>+772-825-524</span>
+            <span>01551936045</span>
           </div>
           <div className="contact-info-item">
             <span className="contact-icon">📍</span>
-            <span>CA, United States</span>
+            <span>Egypt</span>
           </div>
         </div>
       </div>

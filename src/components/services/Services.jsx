@@ -19,7 +19,7 @@ const Services = () => {
 
 
   return (
-    <div className='services'>
+    <div id='services' className='services'>
       <div className="services-title">
         <h1 ref={h1Ref} onMouseMove={handleMouseMove}>My Services</h1>
         {/* <img src={theme_pattern} alt="" /> */}
@@ -28,7 +28,7 @@ const Services = () => {
         <div className="services-format">
             <h3>01</h3>
             <h2>Web Development</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, provident.</p>
+            <p>frontend, backend, and full stack development using Nextjs, React, and Tailwind CSS</p>
             <div className="services-readmore">
                 {/* <img src={arrow_icon} alt="" /> */}
             </div>
@@ -36,7 +36,7 @@ const Services = () => {
         <div className="services-format">
             <h3>02</h3>
             <h2>AI Automation</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, provident.</p>
+            <p>AI automation to make tasks faster and more efficient using nocode platform and also Python, TensorFlow, and Machine Learning</p>
             <div className="services-readmore">
                 {/* <img src={arrow_icon} alt="" /> */}
             </div>
@@ -44,7 +44,7 @@ const Services = () => {
         <div className="services-format">
             <h3>03</h3>
             <h2>Video Editing</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, provident.</p>
+            <p>Video editing using creative tools to create engaging and professional videos</p>
             <div className="services-readmore">
                 {/* <img src={arrow_icon} alt="" /> */}
             </div>

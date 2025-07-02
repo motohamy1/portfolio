@@ -3,11 +3,12 @@
   flex-direction: column; /* Keep column for overall hero layout */
   align-items: center;
   min-height: 100vh;
-  padding: 150px 10px 20px 10px;
+  width: 99%;
+  padding: 100px 10px 20px 10px;
   overflow: hidden;
   margin: 10px 7px;
   border-radius: 20px;
-  border: 5px solid #112A46;
+  border: 3px solid #112A46;
   background: rgba(216, 151, 60, 0.2);
 }
 
@@ -30,7 +31,8 @@
 }
 
 .hero-img{
-  width: 280px;
+  width: 100%; /* Make image responsive within its container */
+  max-width: 280px; /* Set a max-width to control its size */
   height: auto;
   border-radius: 50%;
   animation: dropFromTop 1.5s ease-out forwards;
@@ -39,22 +41,16 @@
   margin-top: -15px;
 }
 
-p{
+h2{
   font-size: large;
   font-weight: 800;
   margin: 10px 10px;
 }
 
-.span{
+.hero-paragraph{
   margin:15px 15px;
   padding: 15px;
   gap: 10px;
-}
-
-.hero-content p span::before {
-  content: '\2022'; /* Unicode for a bullet point */
-  margin-right: 8px; /* Space between bullet and text */
-  color: #DA7C25; /* Example color for the bullet */
 }
 
 .hero-content {
@@ -68,12 +64,9 @@ p{
 .hero-content h1{
   margin-bottom: 10px;
   text-align: center;
-  overflow: hidden; /* Ensures text is hidden before animation */
-  white-space: nowrap; /* Keeps text on a single line */
-  border-right: .15em solid orange; /* Blinking cursor effect */
-  animation:
-    typing 3.5s steps(75, end) 2s forwards, /* Adjusted steps for h1 */
-    blink-caret .75s step-end infinite 2s;
+  opacity: 0;
+  transition: 0.5s;
+  animation: fadeIn 1s ease-in-out 2s forwards;
 }
 
 .hero-content span{
@@ -151,30 +144,53 @@ p{
   to { opacity: 1; }
 }
 
-/* Write-on animation for text */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+/* Keyframe animation for adding border and background */
+@keyframes addBorderBackground {
+  from {
+    border: none;
+    background: transparent;
+  }
+  to {
+    /* border: 2px solid #2ec4b6; */
+    border-radius: 20px;
+    background: linear-gradient(to right top,#2ec4b6,#4db1b1,#1baaa7,#31e0dd,#30cdc8, #21a39a,#2ec4b6  );
+  }
 }
 
-/* Blinking cursor animation */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange }
+/* Write-on animation for text */
+@keyframes typing {
+  from { width: 0; overflow: hidden; }
+  to { width: 100%; overflow: auto; }
 }
+
 
 .hero-content .hero-description {
   opacity: 0; /* Start hidden */
   margin-bottom: 10px; /* Add margin for spacing between paragraphs */
-  animation: fadeIn 1s ease-out forwards;
+  margin-top: 25px;
+  transition: 1s;
+  animation: fadeIn 1s ease-in-out forwards, addBorderBackground 0.5s ease-in-out 5s forwards;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.hero-content .hero-description::before {
+  content: '-  '; /* Add a dash and a space before each paragraph */
+  content: ' '; /* Add a dash and a space before each paragraph */
+  color: #DA7C25; /* Optional: color for the dash */
 }
 
 .hero-content .hero-description:nth-of-type(1) {
-  animation-delay: 5.5s; /* After h1 animation finishes (2s delay + 3.5s duration) */
+  animation-delay: 3s; /* After h1 animation finishes (2s delay + 1s duration) */
 }
 
 .hero-content .hero-description:nth-of-type(2) {
-  animation-delay: calc(5.5s + 1s); /* After first paragraph animation finishes (5.5s delay + 1s duration) */
+  animation-delay: 4s; /* After first paragraph animation finishes (3s delay + 1s duration) */
+}
+
+.hero-content .hero-paragraph::before {
+  content: '- '; /* Add a dash and a space before each paragraph */
+  color: #DA7C25; /* Optional: color for the dash */
 }
 
 .hero-img:hover {
@@ -333,7 +349,7 @@ p{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 80px; /* Adjust as needed for spacing */
+  margin-top: 40px; /* Adjust as needed for spacing */
   position: relative;
   padding: 20px;
 }
@@ -416,6 +432,9 @@ p{
   pointer-events: none;
   z-index: 1;
 }
+
+
+
 
 /* Responsive design for smaller screens for skills */
 @media (max-width: 768px) {

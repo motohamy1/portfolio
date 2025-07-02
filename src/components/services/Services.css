@@ -6,14 +6,15 @@
     width: 99%;
     min-height: 100vh;
     gap: 80px;
-    margin: 10px 10px;
-    border-radius: 10px;
-    border: 5px solid #112A46;
+    margin: 10px 7px;
+    border-radius: 20px;
+    border: 3px solid #112A46;
     padding: 20px 20px;
     background: rgba(216, 151, 60, 0.2);
 }
 .services-title{
     position: relative;
+    margin-top: 40px;
 }
 .services-title h1{
     padding: 0px 30px;
@@ -38,29 +39,28 @@
 }
 .services-container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
-    /* Removed margin to keep container within the parent's border */
-    /* margin-bottom: 80px; */
-    /* margin: 0 auto; */
-    padding: 0; /* Remove padding here as it's added to the parent .services */
+    padding: 0;
     max-width: 1200px;
+    width: 100%;
     box-sizing: border-box;
 }
 .services-format{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 20px;
     padding: 60px;
-    border-radius: 10px;
+    border-radius: 20px;
     border: 2px solid #112A46;
     transition: 0.4s;
     cursor: pointer;
-    /* Adjusted margin and padding */
     margin: 0;
-    padding: 20px;
+    padding: 40px;
     box-sizing: border-box;
+    height: 100%;
+    min-height: 400px;
 }
 .services-format h3{
     color:#112A46;
@@ -79,7 +79,7 @@
     color: #112A46;
     font-size: 24px;
     line-height: 40px;
-    max-width: 300px;
+    /* Removed max-width for better responsiveness */
 }
 .services-readmore{
     display: flex;
@@ -103,3 +103,74 @@
 
 
 
+
+@media (max-width: 1024px) {
+    .services {
+        gap: 60px;
+    }
+    .services-title h1 {
+        font-size: 60px;
+    }
+    .services-container {
+        grid-template-columns: 1fr 1fr; /* Two columns for medium screens */
+        gap: 30px;
+    }
+    .services-format {
+        padding: 40px;
+    }
+    .services-format h2 {
+        font-size: 32px;
+    }
+    .services-format p {
+        font-size: 20px;
+        line-height: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .services {
+        gap: 40px;
+        padding: 15px;
+    }
+    .services-title h1 {
+        font-size: 45px;
+        padding: 0px 15px;
+    }
+    .services-container {
+        grid-template-columns: 1fr; /* Single column for small screens */
+        gap: 20px;
+    }
+    .services-format {
+        padding: 30px;
+        gap: 15px;
+    }
+    .services-format h2 {
+        font-size: 28px;
+    }
+    .services-format p {
+        font-size: 18px;
+        line-height: 28px;
+        max-width: none; /* Remove max-width for full responsiveness */
+    }
+}
+
+@media (max-width: 480px) {
+    .services {
+        gap: 30px;
+        margin: 5px;
+    }
+    .services-title h1 {
+        font-size: 35px;
+    }
+    .services-format {
+        padding: 20px;
+        gap: 10px;
+    }
+    .services-format h2 {
+        font-size: 24px;
+    }
+    .services-format p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}

@@ -4,7 +4,7 @@
 /*      Overall Layout          */
 /********************************/
 .projects-page {
-  width: 99%;
+  width: 99%; /* Use 100% width for better responsiveness */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -12,32 +12,29 @@
   justify-content: center;
   overflow: hidden;
   position: relative;
-  padding: 40px 10px;
-  margin: 10px 10px 10px 10px;
-  box-sizing: border-box;
-  border-radius: 10px;
-  border: 5px solid #112A46;
+  padding: 60px 10px;
+  margin: 10px 7px; /* Center the container horizontally */
+  border-radius: 20px;
+  border: 3px solid #112A46;
   transition: 0.4s;
   background: rgba(216, 151, 60, 0.2);
+  max-width: 100%; /* Ensure it doesn't exceed viewport width */
 }
 
 .projects-title {
-  font-size: 7.5rem;
+  font-size: 5.6rem; /* Increased font size for better visibility */
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -0.02em;
   position: absolute;
-  top: 20px;
+  top: 50px; /* Adjust top position to move it further down */
   left: 50%;
   transform: translateX(-50%);
   pointer-events: none;
-  white-space: nowrap;
+  /* Removed: white-space: nowrap; */ /* Allow text to wrap */
   font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
-  background: linear-gradient(
-		to bottom,
-		#DA7C25 10%, #034c36 10%,
-		rgb(255 255 255 / 0%) 76%
-	);
+  white-space: normal; /* Allow text to wrap */
+  background: linear-gradient(to right top, #034c36, #004b3b, #004940, #024844, #0a4646);
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
@@ -57,10 +54,10 @@
 }
 
 .section-title {
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: #34495e;
-  margin-bottom: 60px; /* Increased margin-bottom for section titles */
+  margin-bottom: 5px; /* Increased margin-bottom for section titles */
   text-align: center;
   position: relative;
   padding-bottom: 15px;
@@ -80,7 +77,7 @@
 
 .carousel-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 2200px;
   height: 450px;
   position: relative;
   perspective: 1000px;
@@ -102,7 +99,7 @@
 /********************************/
 .card {
   position: absolute;
-  width: 200px;
+  width: 350px;
   height: 280px;
   border-radius: 20px;
   overflow: hidden;
@@ -275,7 +272,7 @@
 /* Media Queries for Responsiveness */
 @media (max-width: 1024px) {
   .projects-title {
-    font-size: 6rem;
+    font-size: 3rem;
   }
   .project-section {
     height: 400px;
@@ -283,7 +280,7 @@
     margin-bottom: 80px;
   }
   .section-title {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     margin-bottom: 50px;
   }
   .carousel-container {
@@ -330,7 +327,7 @@
 
 @media (max-width: 768px) {
   .projects-title {
-    font-size: 4.5rem;
+    font-size: 2rem;
   }
   .project-section {
     height: 350px;
@@ -338,7 +335,7 @@
     margin-bottom: 60px;
   }
   .section-title {
-    font-size: 2.2rem;
+    font-size: 1.2rem;
     margin-bottom: 40px;
   }
   .carousel-container {
@@ -391,7 +388,7 @@
     margin: 5px 5px;
   }
   .projects-title {
-    font-size: 3rem;
+    font-size: 1.8rem;
     top: 10px;
   }
   .project-section {
@@ -400,7 +397,7 @@
     margin-bottom: 40px;
   }
   .section-title {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     margin-bottom: 30px;
   }
   .carousel-container {

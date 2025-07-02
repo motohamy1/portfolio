@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Hero.css'
 import hero from '../../assets/profile-img.jpg'
 
@@ -13,6 +13,13 @@ const skills = [
 
 const Hero = () => {
   const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSkillIndex(prev => (prev + 1) % skills.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
 
   const updateSkillsCarousel = (newIndex) => {
     const totalSkills = skills.length;
@@ -38,7 +45,7 @@ const Hero = () => {
   };
 
   return (
-    <div className='hero'>
+    <div id='hero' className='hero'>
       <div className="hero-top-section">
         <div className="hero-left-column">
           <img src={hero} alt="hero" className='hero-img' />
@@ -51,14 +58,16 @@ const Hero = () => {
         
         <div className="hero-content">
           <h1>Hello, I'm <span>Mahmoud Eltohamy</span>, web developer & designer, and a video editor</h1>
-          <p className="hero-description">
+          <h2 className="hero-description">
             I'm a : <br/>
-            <span className='span'>Full stack web developer with a focus on React JS, HTML, CSS, and JavaScript,</span><br />
-            <span className='span'>a UI/UX designer with a keen eye for detail and user experience,</span><br />
-            <span className='span'>AI Automation specialist with expertise in automating tasks using AI tools,</span><br />
-            <span className='span'>video editor with a passion for creating beautiful and functional websites and videos.</span><br />
-          </p>
-          <p className="hero-live">I live in Egypt, and I'm 24 years old</p>
+            <div className='hero-paragraphs'>
+                <p className='hero-paragraph'>Full stack web developer with a focus on React JS, HTML, CSS, and JavaScript,</p>
+                <p className='hero-paragraph'>a UI/UX designer with a keen eye for detail and user experience,</p>
+                <p className='hero-paragraph'>AI Automation specialist with expertise in automating tasks using AI tools,</p>
+                <p className='hero-paragraph'>video editor with a passion for creating beautiful and creative videos.</p>
+            </div>
+          </h2>
+          {/* <h3 className="hero-live">I live in Egypt, and I'm 24 years old</h3> */}
         </div>
       </div>
       <div className="hero-skills">

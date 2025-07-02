@@ -8,11 +8,11 @@ const Navbar = () => {
         {/* <img src={logo}  alt="" className='logo' /> */}
 
         <ul className='nav-items'>
-          <li>Home</li>
-          <li>Services</li>
-          <li>Projects</li>
-          <li>CV</li>
-          <li>Contact</li>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#resume">CV</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
         {/* <div className='nav-connect'>Connect With Me</div> */}
     </div>

@@ -9,6 +9,9 @@
     color: antiquewhite;
     margin : 10px auto;
     border-radius: 25px;
+    position: sticky;
+    top: 10px;
+    z-index: 1000;
 }
 
 .logo{
@@ -24,6 +27,16 @@
     list-style: none;
     gap: 50px;
     font-size: 20px;
+}
+
+.nav-items li a {
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent .nav-items */
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-items li a:hover {
+    transform: scale(1.05);
 }
 
 .nav-connect{
