@@ -377,9 +377,9 @@
     width: 30px;
     height: 30px;
     font-size: 1.2rem;
-    left: 10px;
-    right: 10px;
   }
+  .nav-arrow.left { left: 10px; }
+  .nav-arrow.right { right: 10px; }
 }
 
 @media (max-width: 480px) {
@@ -389,7 +389,7 @@
   }
   .projects-title {
     font-size: 1.8rem;
-    top: 10px;
+    top: 50px;
   }
   .project-section {
     height: 300px;
@@ -437,7 +437,7 @@
     width: 25px;
     height: 25px;
     font-size: 1rem;
-    left: 5px;
-    right: 5px;
   }
+  .nav-arrow.left { left: 5px; }
+  .nav-arrow.right { right: 5px; }
 }

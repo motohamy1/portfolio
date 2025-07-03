@@ -238,11 +238,12 @@
 @media (max-width: 480px) {
   .resume-container {
     padding: 20px;
-    margin: 5px 2px;
+    margin: 30px 2px;
   }
   .resume-header h1 {
     font-size: 35px;
-    padding: 5px 15px;
+    padding: 30px 15px;
+    top: 50px;
   }
   .resume-header h2 {
     font-size: 20px;
