@@ -42,7 +42,7 @@ return (
                         <dev className="summary-item">
                             -- video editing :
                             <br />
-                            "Proficient in using Adobe Premiere Pro for editing and producing high-quality video content."
+                            "New vesion of montage, Proficient in using Davinci resolve for editing and producing high-quality video content."
                         </dev>
                     </h3>
                 </section>
