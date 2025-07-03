@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import './services.css'
+import './Services.css'
 // import theme_pattern from '../../assets/theme_pattern.svg'
 
 const Services = () => {
