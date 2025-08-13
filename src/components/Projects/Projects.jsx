@@ -1,132 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import './Projects.css';
-import portfolioImage from '../../assets/portfoliowebsite.png';
-import socialMediaImage from '../../assets/social-media.png';
-import aiBotImage from '../../assets/ai-bot.png';
-import videoEditingImage from '../../assets/video-editing.png';
-
+import foodImage from '../../assets/food-website.png';
+import medicalImage from '../../assets/medical-website.png';
+import moviesImage from '../../assets/movies-website.png';
 // --- Projects Data ---
 const projects = [
   {
-    title: "Mobile Fitness App",
-    description: "React Native",
-    imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2940&auto=format&fit=crop",
+    title: "Movies website",
+    description: "React & Appwrite",
+    imageUrl: moviesImage,
     category: "web",
-    projectLink: "https://www.google.com/",
-    detailsLink: "https://www.github.com/"
+    projectLink: "https://movie-app-c8pp.onrender.com"
   },
   {
-    title: "Task Management Tool",
+    title: "Food service website",
     description: "React & Node.js",
-    imageUrl: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2940&auto=format&fit=crop",
+    imageUrl: foodImage,
     category: "web",
-    projectLink: "https://www.google.com/",
-    detailsLink: "https://www.github.com/"
+    projectLink: "https://spongyfood.onrender.com"
   },
   {
-    title: "E-commerce Platform",
-    description: "Shopify & Liquid",
-    imageUrl: "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=2942&auto=format&fit=crop",
+    title: "Medical website",
+    description: "Next.js & Tailwind CSS",
+    imageUrl: medicalImage,
     category: "web",
-    projectLink: "https://www.google.com/",
-    detailsLink: "https://www.github.com/"
-  },
-  {
-    title: "Social Media App",
-    description: "Vue & Firebase",
-    imageUrl: socialMediaImage,
-    category: "web",
-    projectLink: "https://www.google.com/",
-    detailsLink: "https://www.github.com/"
-  },
-  {
-    title: "Data Dashboard",
-    description: "D3.js & Python",
-    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop",
-    category: "ai",
-    projectLink: "https://www.google.com/",
-    detailsLink: "https://www.github.com/"
-  },
-  {
-    title: "Portfolio Website",
-    description: "React.js & Tailwind CSS",
-    imageUrl: portfolioImage,
-    category: "web",
-    projectLink: "https://www.google.com/",
-    detailsLink: "https://www.github.com/"
-  },
-  {
-    title: "AI Chatbot Integration",
-    description: "Python & TensorFlow",
-    imageUrl: aiBotImage,
-    category: "ai",
-    projectLink: "https://www.google.com/",
-    detailsLink: "https://www.github.com/"
-  },
-  {
-    title: "Automated Trading Bot",
-    description: "Python & Machine Learning",
-    imageUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2940&auto=format&fit=crop",
-    category: "ai",
-    projectLink: "https://www.google.com/",
-    detailsLink: "https://www.github.com/"
-  },
-  {
-    title: "Video Editing Showcase",
-    description: "Adobe Premiere Pro",
-    imageUrl: videoEditingImage,
-    category: "video",
-    projectLink: "https://www.google.com/",
-    detailsLink: "https://www.github.com/"
-  },
-  {
-    title: "Short Film Production",
-    description: "DaVinci Resolve",
-    imageUrl: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?q=80&w=2940&auto=format&fit=crop",
-    category: "video",
-    projectLink: "https://www.google.com/",
-    detailsLink: "https://www.github.com/"
-  },
-  {
-    title: "Music Video Creation",
-    description: "After Effects & Premiere",
-    imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=2940&auto=format&fit=crop",
-    category: "video",
-    projectLink: "https://www.google.com/",
-    detailsLink: "https://www.github.com/"
+    projectLink: "https://medegypt-care-hub.onrender.com"
   }
 ];
 
 const Projects = () => {
   const [webCurrentIndex, setWebCurrentIndex] = useState(0);
-  const [aiCurrentIndex, setAiCurrentIndex] = useState(0);
-  const [videoCurrentIndex, setVideoCurrentIndex] = useState(0);
 
   const webProjects = projects.filter(p => p.category === 'web');
-  const aiProjects = projects.filter(p => p.category === 'ai');
-  const videoProjects = projects.filter(p => p.category === 'video');
 
-  // Auto-slideshow for each category
-  useEffect(() => {
-    const webInterval = setInterval(() => {
-      setWebCurrentIndex(prev => (prev + 1) % webProjects.length);
-    }, 2000);
-    return () => clearInterval(webInterval);
-  }, [webProjects.length]);
 
-  useEffect(() => {
-    const aiInterval = setInterval(() => {
-      setAiCurrentIndex(prev => (prev + 1) % aiProjects.length);
-    }, 2500);
-    return () => clearInterval(aiInterval);
-  }, [aiProjects.length]);
-
-  useEffect(() => {
-    const videoInterval = setInterval(() => {
-      setVideoCurrentIndex(prev => (prev + 1) % videoProjects.length);
-    }, 4000);
-    return () => clearInterval(videoInterval);
-  }, [videoProjects.length]);
 
   // Add state to store element dimensions for logging
   const [dimensions, setDimensions] = useState({});
@@ -162,6 +69,16 @@ const Projects = () => {
     setIndex(adjustedIndex);
   };
 
+  const handleCardClick = (index, project, currentIndex, setIndex, totalItems) => {
+    if (index === currentIndex) {
+      // Card is already in center, open project link
+      window.open(project.projectLink, '_blank');
+    } else {
+      // Card is not in center, bring it to front
+      updateCarousel(index, 'web', setIndex, totalItems);
+    }
+  };
+
   const getCardClassName = (index, currentIndex, totalItems) => {
     let diff = index - currentIndex;
 
@@ -192,24 +109,13 @@ const Projects = () => {
             <div
               key={index}
               className={`card ${getCardClassName(index, currentIndex, categoryProjects.length)}`}
-              onClick={() => updateCarousel(index, categoryName, setIndex, categoryProjects.length)}
+              onClick={() => handleCardClick(index, project, currentIndex, setIndex, categoryProjects.length)}
             >
               <img src={project.imageUrl} alt={project.title} />
               <div className="card-content">
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
-                {project.projectLink && (
-                  <a href={project.projectLink} 
-                      target="_blank" rel="noopener noreferrer" className="project-link">
-                    View Project
-                  </a>
-                )}
-                {project.detailsLink && (
-                  <a href={project.detailsLink} 
-                      target="_blank" rel="noopener noreferrer" className="details-link">
-                    More Info
-                  </a>
-                )}
+                <div className="project-link">Click to Visit</div>
               </div>
             </div>
           ))}
@@ -242,9 +148,7 @@ const Projects = () => {
     <div id="projects" className="projects-page">
       <h1 className="projects-title">MY PROJECTS</h1>
 
-      {renderCarousel(webProjects, webCurrentIndex, setWebCurrentIndex, "Web Developer Projects")}
-      {renderCarousel(aiProjects, aiCurrentIndex, setAiCurrentIndex, "AI Automation Projects")}
-      {renderCarousel(videoProjects, videoCurrentIndex, setVideoCurrentIndex, "Video Editing Projects")}
+      {renderCarousel(webProjects, webCurrentIndex, setWebCurrentIndex, "Web Development Projects")}
     </div>
   );
 };

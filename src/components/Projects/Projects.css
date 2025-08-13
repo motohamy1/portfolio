@@ -266,8 +266,8 @@
   transform: translateY(-50%) scale(1.1);
 }
 
-.nav-arrow.left { left: 20px; }
-.nav-arrow.right { right: 20px; }
+.nav-arrow.left { left: 10px; }
+.nav-arrow.right { right: 10px; }
 
 /* Media Queries for Responsiveness */
 @media (max-width: 1024px) {
@@ -378,8 +378,8 @@
     height: 30px;
     font-size: 1.2rem;
   }
-  .nav-arrow.left { left: 10px; }
-  .nav-arrow.right { right: 10px; }
+  .nav-arrow.left { left: 2px; }
+  .nav-arrow.right { right: 2px; }
 }
 
 @media (max-width: 480px) {
@@ -438,6 +438,6 @@
     height: 25px;
     font-size: 1rem;
   }
-  .nav-arrow.left { left: 5px; }
-  .nav-arrow.right { right: 5px; }
+  .nav-arrow.left { left: 2px; }
+  .nav-arrow.right { right: 2px; }
 }

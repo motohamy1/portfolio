@@ -27,24 +27,24 @@ const Services = () => {
       <div className="services-container">
         <div className="services-format">
             <h3>01</h3>
-            <h2>Web Development</h2>
-            <p>frontend, backend, and full stack development using Nextjs, React, and Tailwind CSS</p>
+            <h2>Web Design</h2>
+            <p>Creating visually stunning and user-friendly interfaces that captivate audiences. I focus on modern design principles and responsive layouts.</p>
             <div className="services-readmore">
                 {/* <img src={arrow_icon} alt="" /> */}
             </div>
         </div>
         <div className="services-format">
             <h3>02</h3>
-            <h2>AI Automation</h2>
-            <p>AI automation to make tasks faster and more efficient using nocode platform and also Python, TensorFlow, and Machine Learning</p>
+            <h2>Frontend Development</h2>
+            <p>Building interactive user interfaces using React, JavaScript, and modern CSS frameworks for seamless functionality across all devices.</p>
             <div className="services-readmore">
                 {/* <img src={arrow_icon} alt="" /> */}
             </div>
         </div>
         <div className="services-format">
             <h3>03</h3>
-            <h2>Video Editing</h2>
-            <p>Video editing using creative tools to create engaging and professional videos</p>
+            <h2>Backend Development</h2>
+            <p>Developing robust server-side applications and APIs using Node.js and Express to create scalable solutions for web applications.</p>
             <div className="services-readmore">
                 {/* <img src={arrow_icon} alt="" /> */}
             </div>

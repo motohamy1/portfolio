@@ -31,19 +31,6 @@ return (
                             "Passionate about learning new technologies and improving user experiences through innovative solutions."
                             <br />
                         </dev>
-                        <dev className="summary-item">
-                            -- AI automation : 
-                            <br />
-                            "Experienced in implementing AI-driven solutions to automate repetitive tasks and improve efficiency."
-                            <br />
-                            "Skilled in using Python and TensorFlow for developing machine learning models."
-                            <br />
-                        </dev>
-                        <dev className="summary-item">
-                            -- video editing :
-                            <br />
-                            "New vesion of montage, Proficient in using Davinci resolve for editing and producing high-quality video content."
-                        </dev>
                     </h3>
                 </section>
                 {/* <section className="resume-section">
@@ -65,8 +52,6 @@ return (
                         <ul>
                             <li>web developer - freelancer</li>
                             <li>Internship Doctor - mansoura hospitals</li>
-                            <li>AI automation - freelancer</li>
-                            <li>video editor - freelancer</li>
                         </ul>
                     </dev>
                 </div>
@@ -82,9 +67,9 @@ return (
                     <h2>Skills</h2>
                     <ul className="skills-list">
                         <li>Programming Languages: JavaScript, Python, etc.</li>
-                        <li>Frameworks & Libraries: node.js, React, Nextjs, Tailwind CSS, etc.</li>
+                        <li>Frameworks & Libraries: React.js, Angular, Next.js, Node.js, Tailwind CSS, etc.</li>
                         <li>Tools: Git, Webpack, Docker, etc.</li>
-                        <li>Soft Skills: Communication, Teamwork, leadership, etc.</li>
+                        <li>Soft Skills: Communication, Teamwork, Leadership, etc.</li>
                     </ul>
                 </section>
         </div>
