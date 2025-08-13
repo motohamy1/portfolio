@@ -1,7 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Contact.css'
 
 const Contact = () => {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState('');
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('Sending...');
+    
+    try {
+      const response = await fetch('http://localhost:3001/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      
+      if (response.ok) {
+        setStatus('Message sent successfully!');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus('Failed to send message.');
+      }
+    } catch (error) {
+      setStatus('Error sending message.');
+    }
+  };
+
   return (
     <div id="contact" className="contact-container">
       <div className="contact-left">
@@ -30,14 +59,36 @@ const Contact = () => {
       </div>
       <div className="contact-right">
         <h1 className="contact-header">Get in touch</h1>
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={handleSubmit}>
           <label>Your Name</label>
-          <input type="text" placeholder="Enter your name" />
+          <input 
+            type="text" 
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Enter your name" 
+            required 
+          />
           <label>Your Email</label>
-          <input type="email" placeholder="Enter your email" />
+          <input 
+            type="email" 
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Enter your email" 
+            required 
+          />
           <label>Write your message here</label>
-          <textarea placeholder="Enter your message" rows={5}></textarea>
+          <textarea 
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Enter your message" 
+            rows={5}
+            required
+          ></textarea>
           <button type="submit" className="contact-submit">Submit now</button>
+          {status && <p className="status-message">{status}</p>}
         </form>
       </div>
     </div>
